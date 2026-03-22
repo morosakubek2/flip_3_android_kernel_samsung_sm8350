@@ -6,6 +6,10 @@ ifeq ($(CONFIG_SEC_KUNIT), y)
 endif
 ccflags-y := -Wformat
 
+obj-$(CONFIG_DIRECT_CHARGING)		+= sec_direct_charger.o
+
+ccflags-y := -Wformat
+
 obj-$(CONFIG_SEC_PD)				+= sec_pd.o
 
 obj-$(CONFIG_BATTERY_SAMSUNG)	+= sec-battery.o

@@ -9,6 +9,15 @@ config DUAL_BATTERY_CELL_SENSING
     help
       Say Y here to enable support for cell sensing of dual battery
 
+config DIRECT_CHARGING
+	tristate "support for direct charging"
+	help
+	 Say Y to include support for direct charging
+	 support for direct charging models.
+	 Direct charging models should enable this charging option.
+	 it include some charging scenario for direct charging models.
+
+
 menu "Samsung Battery Common drivers"
 
 config BATTERY_SAMSUNG

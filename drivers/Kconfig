@@ -270,4 +270,10 @@ source "drivers/vibrator/maxim/Kconfig" # ADDED BY LEGO AUTOMATICALLY: DO NOT SU
 source "drivers/optics/Kconfig" # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
 source "drivers/usb/typec/maxim/Kconfig" # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
 source "drivers/input/sec_input/stm_fold/Kconfig" # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
+source "drivers/input/sec_input/stm_spi/Kconfig" # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
+source "drivers/input/wacom/Kconfig" # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
+source "drivers/vibrator/cs40l2x/Kconfig" # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
+source "drivers/uwb/Kconfig" # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
+source "drivers/uwb/uwb_logger/Kconfig" # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
+source "drivers/battery/charger/sm5451_charger/Kconfig" # ADDED BY LEGO AUTOMATICALLY: DO NOT SUBMIT
 endmenu

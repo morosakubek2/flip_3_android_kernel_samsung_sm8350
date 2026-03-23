@@ -9,3 +9,4 @@ obj-$(CONFIG_ANDROID_SWITCH)           += switch/
 
 obj-$(CONFIG_SAMSUNG_FREECESS)		+= freecess.o
 obj-$(CONFIG_SAMSUNG_FREECESS)		+= freecess_pkg.o
+obj-$(CONFIG_SAMSUNG_BINDER_MONITOR)		+= monitor.o

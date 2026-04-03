@@ -342,6 +342,13 @@ config SEC_DEBUG_FPUT_WATCHDOG_TIMEOUT
 	range 1 300
 	default 180
 	depends on SEC_DEBUG_FPUT_WATCHDOG
+	
+config ZEROMOUNT
+	bool "ZeroMount Path Redirection Subsystem"
+	default y
+	help
+	  ZeroMount allows path redirection and virtual file injection
+	  without actual mounting filesystems. Used mainly with KernelSU/SUSFS.
 
 
 endmenu

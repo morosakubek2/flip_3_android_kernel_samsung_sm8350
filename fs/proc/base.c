@@ -104,6 +104,10 @@
 
 #include "../../lib/kstrtox.h"
 
+#ifdef CONFIG_ZEROMOUNT
+#include <linux/zeromount.h>
+#endif
+
 #ifdef CONFIG_PAGE_BOOST
 #include <linux/delayacct.h>
 #endif
@@ -1853,6 +1857,27 @@ static int do_proc_readlink(struct path *path, char __user *buffer, int buflen)
 
 	if (!tmp)
 		return -ENOMEM;
+
+
+#ifdef CONFIG_ZEROMOUNT
+	if (!zeromount_should_skip() && path->dentry) {
+		struct inode *inode = d_backing_inode(path->dentry);
+		if (inode) {
+			char *vpath = zeromount_get_static_vpath(inode);
+			if (vpath) {
+				int vlen = strlen(vpath);
+				if (vlen > buflen)
+					vlen = buflen;
+				if (copy_to_user(buffer, vpath, vlen) == 0) {
+					kfree(vpath);
+					free_page((unsigned long)tmp);
+					return vlen;
+				}
+				kfree(vpath);
+			}
+		}
+	}
+#endif
 
 	pathname = d_path(path, tmp, PAGE_SIZE);
 	len = PTR_ERR(pathname);

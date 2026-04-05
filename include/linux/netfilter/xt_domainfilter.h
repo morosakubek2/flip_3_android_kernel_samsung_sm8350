@@ -20,6 +20,8 @@
 #ifndef _XT_DOMAINFILTER_MATCH_H
 #define _XT_DOMAINFILTER_MATCH_H
 
+#include <linux/types.h>  /* Defines __u8, __u32, etc. */
+
 enum {
 	XT_DOMAINFILTER_WHITE    = 1 << 0,
 	XT_DOMAINFILTER_BLACK    = 1 << 1,

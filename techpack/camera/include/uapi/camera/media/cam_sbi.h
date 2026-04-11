@@ -1,6 +1,7 @@
 #ifndef __UAPI_CAM_SBI_H__
 #define __UAPI_CAM_SBI_H__
 
+#include <linux/time_types.h>
 #include <camera/media/cam_defs.h>
 #include <camera/media/cam_cpas.h>
 
@@ -26,14 +27,12 @@ enum cam_custom_hw_task_type {
 #define CAM_CUSTOM_OUT_RES_UDI_0               1
 #define CAM_CUSTOM_OUT_RES_UDI_1               2
 #define CAM_CUSTOM_OUT_RES_UDI_2               3
-
 /* To be used for SBI RDI DUMP */
 #define CAM_CUSTOM_OUT_RES_UDI_3               4
 #define CAM_CUSTOM_OUT_RES_DUMMY               0xDADADADA
 
 #define CAM_SBI_INPUT_PORT_TYPE_TAR (1 << 0)
 #define CAM_SBI_INPUT_PORT_TYPE_REF (1 << 1)
-
 #define CAM_SBI_OUTPUT_PORT_TYPE_DS2 (1 << 0)
 #define CAM_SBI_OUTPUT_PORT_TYPE_RES (1 << 1)
 /* end of todo : delete */
@@ -60,7 +59,6 @@ enum cam_custom_hw_task_type {
 #define CAM_CUSTOM_IN_RES_PHY_1               (CAM_CUSTOM_IN_RES_BASE + 2)
 #define CAM_CUSTOM_IN_RES_PHY_2               (CAM_CUSTOM_IN_RES_BASE + 3)
 #define CAM_CUSTOM_IN_RES_PHY_3               (CAM_CUSTOM_IN_RES_BASE + 4)
-
 
 /* Query devices */
 /**
@@ -206,7 +204,6 @@ struct cam_sbi_cmd_buf_type_init {
 	__u32 cue_option;       /* 0 : maunual, 1 : auto */
 	__u32 ssm_framerate;    /* 960 = 960 fps, 480 = 480 fps */
 	__u64 clock_rate;
-
 	/* TODO: should be modify register set buffer size */
 	__u32    register_set_size;
 	__u32    register_set[500][2];    /* [register address offset][value] */
@@ -243,7 +240,6 @@ struct cam_sbi_cmd_buf_type_1 {
 	__u32 ssm_framerate;    /* 960 = 960 fps, 480 = 480 fps */
 	__u32 ssm_maxframes;
 	__u32 task2_action;
-
 	__u32 register_set_size;
 	__u32 register_set[20][2]; /* [register address offset][value] */
 };
@@ -263,7 +259,6 @@ struct cam_sbi_cmd_buf_type_2 {
 	__u32                       reserved;
 };
 
-
 /* todo : delete below */
 struct cam_sbi_soc_info {
 	__u64 clock_rate;
@@ -276,4 +271,3 @@ struct cam_sbi_acquire_args {
 };
 
 #endif /* __UAPI_CAM_SBI_H__ */
-

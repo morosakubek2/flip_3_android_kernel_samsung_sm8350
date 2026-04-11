@@ -60,6 +60,7 @@
 #ifndef __KERNEL__
 #include <sys/time.h>
 #endif
+#include <linux/time_types.h>
 #include <linux/compiler.h>
 #include <linux/ioctl.h>
 #include <linux/types.h>

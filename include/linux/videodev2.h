@@ -56,7 +56,7 @@
 #ifndef __LINUX_VIDEODEV2_H
 #define __LINUX_VIDEODEV2_H
 
-#include <linux/time_types.h
+#include <linux/time_types.h>
 #include <linux/time.h>     /* need struct timeval */
 #include <uapi/linux/videodev2.h>
 
